@@ -1,6 +1,7 @@
 require('dotenv').config();
 var express = require('express');						
 var app = express();
+var http = require('http').Server(app);
 var bodyParser = require('body-parser');				// Body-parser is an express method
 var sequelize = require('./db.js');
 var User = sequelize.import('./models/user');
@@ -20,7 +21,7 @@ app.use('/api/test', function(req, res){
 	res.send("Hello World");
 });
 
-app.listen(3000, function(){  							// .listen is an Express method
+http.listen(3000, function(){  							// .listen is an Express method
 	console.log("app is open on 3000");
 })
 

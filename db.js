@@ -1,5 +1,5 @@
 var Sequelize = require('sequelize');
-var sequelize = new Sequelize(process.env.DATABASE_URL || 'postgres://postgres:yourpostgrespasswordhere@localhost:5432/workoutlog', {
+var sequelize = new Sequelize(process.env.DATABASE_URL || 'postgres://postgres:100%Cool!@localhost:5432/workoutlog', {
 								//Point to the deployed DATABASE_URL or the local one.
 	dialect: 'postgres'
 });

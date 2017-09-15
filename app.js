@@ -8,7 +8,7 @@ var User = sequelize.import('./models/user');
 
 // // User.sync(); // 
 // User.sync({force:true}) // WARNING: This will drop the table! (By forcing the table to sync)
-sequelize.sync({force:true}); 
+sequelize.sync(); 
 
 
 app.use(bodyParser.json()); 							// This JSONifies the data so other functions can access it

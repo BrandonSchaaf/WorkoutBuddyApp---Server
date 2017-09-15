@@ -60,7 +60,7 @@ router.get('/:id', function(req, res) {		// This will retrieve one workout speci
 });
 
 router.put('/', function(req,res) {			// This will return the data from the log that was updated
-    var description = req.body.log.desc;
+    var description = req.body.log.description;
     var result = req.body.log.result; 
     var data = req.body.log.id;
     var definition = req.body.log.def;

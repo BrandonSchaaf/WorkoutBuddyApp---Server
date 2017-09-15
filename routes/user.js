@@ -8,9 +8,12 @@ router.post('/', function(req, res) {				//Breaks the function into two sections
 														// Request Section
 	var username = req.body.user.username;
 	var pass = req.body.user.password;
+	var name = req.body.user.name;
+	console.log(name)
 	User.create({
 		username: username,
-		passwordhash: bcrypt.hashSync(pass, 10)		// Jumble (Salt) the password ten times
+		passwordhash: bcrypt.hashSync(pass, 10),		// Jumble (Salt) the password ten times
+		name: name
 	}).then(											// Response Section
 		function createSuccess(user){
 			var token = jwt.sign({id: user.id}, process.env.JWT_SECRET, {expiresIn: 60*60*24}); //Assigns the user a JWT token. Look up process.env (the .env file says JWT_SECRET = i_am_secret)

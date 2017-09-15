@@ -4,15 +4,15 @@ var User = sequelize.import('../models/user');		// Imports models/user.js
 var Definition = sequelize.import('../models/definition'); //Definition.js in the models folder
 
 router.post('/', function(req, res){
-	var description = req.body.definition.desc;		//variables
-	var logType = req.body.definition.type;
+	console.log(req.body)
+	var description = req.body.desc;
 	var owner = req.user.id;
+
 
 	Definition 										// methods
 		.create({									// Objects must match the model
 			description: description,
-			logType: logType,
-			owner: owner
+			owner: owner		// THEN UPDATE THIS with that ajax post
 		})
 		.then(
 			function createSuccess(definition) {	// Success function
